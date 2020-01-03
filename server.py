@@ -1,4 +1,5 @@
 import socket
+import serial
 
 IP = '192.168.1.30'
 PORT = 5566
