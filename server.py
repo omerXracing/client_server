@@ -12,8 +12,8 @@ clientscoket, address = s.accept()
 print(f"Connection from {address} has been established!")
 
 while True:
-    clientscoket.setblocking(0)
-    ready = select.select([clientscoket], [], [], 1)
+    clientscoket.setblocking(False)
+    ready = select.select([clientscoket], [], [], 0.1)
     if ready[0]:
         msg = clientscoket.recv(1024)
         msg = msg.decode("utf-8")
