@@ -17,7 +17,7 @@ void loop() {
       Serial.println("Turn On");
       digitalWrite(ledPin, HIGH); 
     }
-    if ((serverIn == "OFF") || (serverIn == "off") || (serverIn == "Off")){
+    else if ((serverIn == "OFF") || (serverIn == "off") || (serverIn == "Off")){
       Serial.println("Turn Off");
       digitalWrite(ledPin, LOW); 
     }
