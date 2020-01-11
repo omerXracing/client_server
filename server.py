@@ -25,9 +25,12 @@ while True:
             clientscoket.close()
             s.close()
             exit()
-        arduinoSerialData.write(bytes(client_msg, 'utf-8'))
-        arduinoSerialData.write(bytes('\n', 'utf-8'))
+        if client_msg == 'None':
+            clientscoket.send(bytes('Server: massage is empty, please resend', 'utf-8'))
+        else:
+            arduinoSerialData.write(bytes(client_msg, 'utf-8'))
+            arduinoSerialData.write(bytes('\n', 'utf-8'))
     arduinoIn = ""
     while (arduinoSerialData.inWaiting() > 0):
         arduinoIn = arduinoSerialData.readline().strip().decode("ascii")
-        clientscoket.send(bytes(arduinoIn, 'utf-8'))
+        clientscoket.send(bytes("Arduino: " + arduinoIn, 'utf-8'))

@@ -8,7 +8,9 @@ s.connect((IP, PORT))
 print(f'connected to server\nIP: {IP}\nPORT: {PORT} ')
 
 while True:
-    toSend = input('data to send: ')
+    toSend = input('Data to send: ')
+    if toSend == '':
+        toSend = 'None'
     s.send(bytes(toSend, 'utf-8'))
     if toSend == 'exit':
         print('closing socket')
