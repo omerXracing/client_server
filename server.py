@@ -20,6 +20,7 @@ while True:
         client_msg = clientscoket.recv(1024)
         client_msg = client_msg.decode('utf-8')
         if client_msg == 'exit':
+            clientscoket.send(bytes('exit confirmation', 'utf-8'))
             print('exit message received, closing socket')
             clientscoket.close()
             s.close()
