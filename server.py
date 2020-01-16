@@ -33,3 +33,5 @@ while True:
     while (arduinoSerialData.inWaiting() > 0):
         arduinoIn = arduinoSerialData.readline().strip().decode("ascii")
         clientscoket.send(bytes("Arduino: " + arduinoIn, 'utf-8'))
+
+    # clientscoket.send(bytes('HartBeat', 'utf-8'))
