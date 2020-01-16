@@ -2,8 +2,7 @@ import socket
 import select
 import serial
 
-arduinoSerialData = serial.Serial('COM10', 9600)
-# arduinoSerialData.write(bytes('on', 'utf-8'))
+arduinoSerialData = serial.Serial('COM4', 9600)
 
 IP = '192.168.1.30'
 PORT = 5566
